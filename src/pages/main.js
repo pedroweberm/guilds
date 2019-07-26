@@ -12,7 +12,7 @@ import GuildItem from '../components/guildItem';
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor: '#C3D2EB',
+    backgroundColor: '#C3DBEB',
     flex: 1
   },
   unloggedContainer: {
@@ -81,27 +81,6 @@ export default class Main extends Component {
     if (this.state.isLoading) {
       console.log('Carregando');
       return <Text>Carregando...</Text>;
-    }
-    if (this.state.controller.GetActiveUser() === -1) {
-      return (
-        <View style={styles.main}>
-          <View style={styles.unloggedContainer}>
-            <Text style={styles.unloggedMessage}>
-              Efetue o login para continuar
-            </Text>
-            <TouchableOpacity
-              onPress={() => {
-                this.props.navigation.navigate('Login', {
-                  navi: this.props.navigation
-                });
-              }}
-              style={styles.loginButton}
-            >
-              <Text style={styles.loginButtonText}>Login</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      );
     }
     return (
       <ScrollView style={styles.main}>

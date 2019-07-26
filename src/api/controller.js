@@ -31,10 +31,14 @@ export default class Controller {
     this.users.push(newUser);
   }
 
-  AddGuild(name, managerId, dates) {
+  AddGuild(name, managerId, dates, checklist) {
     const newGuild = new Guild(name, managerId);
     dates.forEach((date) => {
       newGuild.AddDate(date);
+    });
+
+    checklist.forEach((item) => {
+      newGuild.AddChecklistItem(item);
     });
 
     this.guilds.push(newGuild);
@@ -69,7 +73,12 @@ export default class Controller {
       randomUser = this.users[
         Math.floor(1 + Math.random() * (this.users.length - 1))
       ];
-      const newGuild = this.AddGuild(guild.name, randomUser, guild.dates);
+      const newGuild = this.AddGuild(
+        guild.name,
+        randomUser,
+        guild.dates,
+        guild.checklist
+      );
       randomUser.AddPartGuild(newGuild);
     });
 
@@ -149,6 +158,7 @@ class Guild {
     this.manager = manager;
 
     this.dates = [];
+    this.checklist = [];
   }
 
   GetId() {
@@ -167,6 +177,10 @@ class Guild {
     return this.dates;
   }
 
+  GetChecklist() {
+    return this.checklist;
+  }
+
   SetName(name) {
     this.name = name;
   }
@@ -177,5 +191,14 @@ class Guild {
 
   AddDate(date) {
     this.dates.push(date);
+  }
+
+  AddChecklistItem(item) {
+    const checklistItem = {
+      checked: false,
+      description: item
+    };
+
+    this.checklist.push(checklistItem);
   }
 }

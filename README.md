@@ -1,6 +1,7 @@
 # guilds
 Exercício para a Formação em Mobile React Native da 4all
 
+# Funcionamento
 Aplicativo mobile para controle dos usuarios e guilds 4all
 
 Usuario admin tem acesso a todas as guilds

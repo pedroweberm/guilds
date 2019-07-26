@@ -1,0 +1,11 @@
+{
+  "users": [
+    { "name": "admin", "role": 1 },
+    { "name": "joao", "role": 0 },
+    { "name": "pedro", "role": 0 },
+    { "name": "andressa", "role": 0 },
+    { "name": "rafael", "role": 0 },
+    { "name": "erika", "role": 0 },
+    { "name": "jose", "role": 0 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "guilds": [
+    { "id": 1, "name": "IOS", "moderator": 1, "dates": ["24/08/2019"] },
+    {
+      "id": 2,
+      "name": "React Native",
+      "moderator": 2,
+      "dates": ["14/08/2019"]
+    },
+    { "id": 3, "name": "Android", "moderator": 3, "dates": ["21/08/2019"] },
+    { "id": 4, "name": "Teste", "moderator": 4, "dates": ["10/09/2019"] }
+  ]
+}

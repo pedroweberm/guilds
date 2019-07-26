@@ -4,13 +4,15 @@ import Main from './pages/main';
 import Guild from './pages/guild';
 import Login from './pages/login';
 import Welcome from './pages/welcome';
+import Register from './pages/register';
 
 const rootNavigator = createStackNavigator(
   {
     Welcome,
     Main,
     Guild,
-    Login
+    Login,
+    Register
   },
   {
     defaultNavigationOptions: {

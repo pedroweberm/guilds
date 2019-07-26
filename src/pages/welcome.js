@@ -70,12 +70,14 @@ export default class Welcome extends Component {
             });
           }}
         >
-          <Text style={styles.loginButtonText}>Login</Text>
+          <Text style={styles.loginButtonText}>Entrar</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.loginButton}
           onPress={() => {
-            this.props.navigation.navigate('Register');
+            this.props.navigation.navigate('Register', {
+              Controller: this.state.controller
+            });
           }}
         >
           <Text style={styles.loginButtonText}>Cadastrar</Text>

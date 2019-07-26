@@ -26,9 +26,15 @@ export default class Controller {
   }
 
   AddUser(name, role) {
-    const newUser = new User(name, role);
+    let newUser = this.users.find(tempUser => tempUser.name === name);
 
+    if (this.users.indexOf(newUser) !== -1) {
+      return false;
+    }
+
+    newUser = new User(name, role);
     this.users.push(newUser);
+    return true;
   }
 
   AddGuild(name, managerId, dates, checklist) {
@@ -80,6 +86,7 @@ export default class Controller {
         guild.checklist
       );
       randomUser.AddPartGuild(newGuild);
+      this.users[0].AddPartGuild(newGuild);
     });
 
     let randomGuild = 0;
